@@ -260,7 +260,7 @@ public with sharing class SOQL {
         // Query the Cases
         // Loop through each Case and add the Id to the set
 
-        Map<Id, Case> cases = new Map<Id, Case>([SELECT Id FROM Case WHERE AccountId != :accountId]);
+        Map<Id, Case> cases = new Map<Id, Case>([SELECT Id FROM Case WHERE AccountId = :accountId]);
         return cases.keySet(); // Replace null with the variable you used to store the result
     }
 
